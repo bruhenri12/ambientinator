@@ -1720,6 +1720,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 77641404}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1601534202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8477560934378440804, guid: 61049dfb4690be642a843757d529ca97,
+    type: 3}
+  m_PrefabInstance: {fileID: 77641404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2456caa2cc63f409cefafc263e1b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1620115126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1895,6 +1907,51 @@ MonoBehaviour:
   edgeRenderingEnabled_: 0
   edgeColor_: {r: 1, g: 1, b: 1, a: 1}
   colorMapType: 0
+--- !u!1 &1694717985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694717986}
+  - component: {fileID: 1694717987}
+  m_Layer: 0
+  m_Name: WallDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1694717986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694717985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3124423, y: -3.051428, z: 22.794842}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1694717987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694717985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c5cc4bc5e169d4e9bfd497412a4629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugger: {fileID: 1601534202}
 --- !u!1 &1872854734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,3 +2229,4 @@ SceneRoots:
   - {fileID: 144554988}
   - {fileID: 1373660299}
   - {fileID: 742366868}
+  - {fileID: 1694717986}
