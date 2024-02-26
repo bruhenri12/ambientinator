@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -613,6 +613,11 @@ PrefabInstance:
       propertyPath: EnableWorldLock
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3613868102660323786, guid: c2e00db6d2dfa42ac8d821db8d493a44,
+        type: 3}
+      propertyPath: SceneSettings.DataSource
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8047981335285221976, guid: c2e00db6d2dfa42ac8d821db8d493a44,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -748,6 +753,11 @@ PrefabInstance:
       propertyPath: guardianDistance
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2296141232796561049, guid: 5d3c52234cffb412595fe970f51c6342,
+        type: 3}
+      propertyPath: _MeshMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 56d234bc3891cc04b987641ca3c7fa78, type: 2}
     - target: {fileID: 5456522116536683058, guid: 5d3c52234cffb412595fe970f51c6342,
         type: 3}
       propertyPath: m_LocalPosition.x
