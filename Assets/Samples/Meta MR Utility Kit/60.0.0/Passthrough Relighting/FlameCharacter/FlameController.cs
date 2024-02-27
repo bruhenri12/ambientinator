@@ -34,7 +34,7 @@ public class FlameController : MonoBehaviour
     [SerializeField] private GameObject lookAtTarget;
     [SerializeField] private int attractionForceMultiplier = 2;
     [SerializeField] private float lightIntensityVariance = 0.2f;
-    private Vector3 targetOffset = new(0.013f, 0.5f, 0);
+    private Vector3 targetOffset = new(0, 0, 0);
 
     private int _blendShapeCount;
     private Vector3 _distanceFromRoot;
@@ -69,7 +69,7 @@ public class FlameController : MonoBehaviour
         AnimateBlendShapes();
         RotateFlame();
         MoveFlame();
-        AnimateLightIntensity();
+        //AnimateLightIntensity();
     }
 
     private void FixedUpdate()
@@ -89,7 +89,9 @@ public class FlameController : MonoBehaviour
 
     private void MoveFlame()
     {
-        _rootGoal.transform.position = attractionTarget.transform.position + _distanceFromRoot;
+        //_rootGoal.transform.position = attractionTarget.transform.position + _distanceFromRoot;
+        _rootGoal.transform.position = this.transform.position + _distanceFromRoot;
+
     }
 
     private void AnimateLightIntensity()
