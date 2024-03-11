@@ -21,103 +21,87 @@
 using Meta.XR.MRUtilityKit;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class DebugPanel : MonoBehaviour
 {
-    [SerializeField] private Toggle shadowsToggle;
-    [SerializeField] private Toggle highlightsToggle;
-    [SerializeField] private Toggle globalMeshToggle;
-    [SerializeField] private Button respawnButton;
-    [SerializeField] private Slider lightOpaquenessSlider;
-    [SerializeField] private Slider passthroughBrightnessSlider;
+    [SerializeField] private Slider intensitySlider;
+    [SerializeField] private  Light pointLight;
+    [SerializeField] private Slider areaSlider;
+    [SerializeField] private Slider colorSlider;
 
-    [SerializeField] private Renderer oppyRenderer;
-    [SerializeField] private GameObject blobShadowProjector;
     [SerializeField] private Material sceneMaterial;
-    [SerializeField] private OppyCharacterController oppyController;
-    [SerializeField] private OppyLightGlow oppyLightGlow;
-    [SerializeField] private OVRPassthroughLayer passthroughLayer;
+    private bool pressed;
 
     private EffectMesh[] effectMeshes;
     private const string HighLightAttenuationShaderPropertyName = "_HighLightAttenuation";
 
     private void Awake()
     {
-        shadowsToggle.onValueChanged.AddListener(ShadowsSettingsToggled);
-        highlightsToggle.onValueChanged.AddListener(HighlightSettingsToggled);
-        globalMeshToggle.onValueChanged.AddListener(GlobalMeshSettingsToggled);
-        respawnButton.onClick.AddListener(oppyController.Respawn);
-        lightOpaquenessSlider.onValueChanged.AddListener(
-            (val) => { sceneMaterial.SetFloat(HighLightAttenuationShaderPropertyName, val); }
-        );
-        passthroughBrightnessSlider.onValueChanged.AddListener(
-            (brightness) =>
-            {
-                passthroughLayer.SetBrightnessContrastSaturation(brightness);
-            }
-        );
+        pressed = false;
         effectMeshes = FindObjectsOfType<EffectMesh>();
     }
-
-    public void DisableGlobalMeshToggle()
-    {
-        bool globalMeshExists = MRUK.Instance && MRUK.Instance.GetCurrentRoom() && MRUK.Instance.GetCurrentRoom().GetGlobalMeshAnchor();
-        globalMeshToggle.interactable = globalMeshExists;
-    }
-
-    private void GlobalMeshSettingsToggled(bool globalMeshActive)
-    {
-        if (globalMeshActive && !Application.isEditor)
-        {
-            foreach (var effectMesh in effectMeshes)
-            {
-                if ((effectMesh.Labels & MRUKAnchor.SceneLabels.GLOBAL_MESH) == 0)
-                {
-                    effectMesh.DestroyMesh();
-                }
-                else
-                {
-                    effectMesh.CreateMesh();
-                }
+    
+    private void Update(){
+        if(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x == 0f && OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).y == 0f){
+            pressed = false;
+        }
+        // returns true if the primary button (typically “A”) is currently pressed.
+        if(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x == 1.0f && !pressed){
+            Debug.Log("aumentou intensidade em 1");
+            if(pointLight.intensity < 5){
+                pointLight.intensity += 1;
+                intensitySlider.value += 1;
             }
+            pressed = true;
         }
-        else
-        {
-            foreach (var effectMesh in effectMeshes)
-            {
-                if ((effectMesh.Labels & MRUKAnchor.SceneLabels.GLOBAL_MESH) != 0)
-                {
-                    effectMesh.DestroyMesh(LabelFilter.FromEnum(effectMesh.Labels));
-                }
-                else
-                {
-                    effectMesh.CreateMesh();
-                }
+        if(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x == -1.0f && !pressed){
+            Debug.Log("diminuiu intensidade em 1");
+            if(pointLight.intensity > 0){
+                pointLight.intensity -= 1;
+                intensitySlider.value -= 1;
             }
+            pressed = true;
         }
-        oppyController.Respawn();
-    }
+        if(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).y == 1.0f && !pressed){
+            Debug.Log("aumentou area em 1");
+            if(pointLight.range < 5){
+                pointLight.range += 1;
+                areaSlider.value += 1;
+            }
+            pressed = true;
+        }
+        if(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).y == -1.0f && !pressed){
+            Debug.Log("diminuiu area em 1");
+            if(pointLight.range > 0){
+                pointLight.range -= 1;
+                areaSlider.value -= 1;
+            }
+            pressed = true;
+        }
 
-    private void HighlightSettingsToggled(bool highlightsOn)
-    {
-        sceneMaterial.SetFloat(HighLightAttenuationShaderPropertyName, highlightsOn ? 1 : 0);
-        oppyLightGlow.SetGlowActive(highlightsOn);
-    }
+        if(OVRInput.GetDown(OVRInput.Button.One)){
+            Debug.Log("mudou cor");
+            if(colorSlider.value > 0){
+                colorSlider.value -= 0.5f;
+                pointLight.color = Color.Lerp(Color.red, Color.green, colorSlider.value / 5);
+            }
 
-    private void ShadowsSettingsToggled(bool realtimeShadows)
-    {
-        if (realtimeShadows)
-        {
-            oppyRenderer.shadowCastingMode = ShadowCastingMode.On;
-            blobShadowProjector.SetActive(false);
         }
-        else
-        {
-            oppyRenderer.shadowCastingMode = ShadowCastingMode.Off;
-            blobShadowProjector.SetActive(true);
+
+        if(OVRInput.GetDown(OVRInput.Button.Two)){
+            Debug.Log("mudou cor");
+            if(colorSlider.value < 5){
+                colorSlider.value += 0.5f;
+                pointLight.color = Color.Lerp(Color.red, Color.green, colorSlider.value / 5);
+            }
+
         }
+
     }
 }
