@@ -22,9 +22,30 @@ public class WallDetector : MonoBehaviour
     int currentColorIndex = 0;
     Material CurrentColorMaterial { get { return colorsMaterials[currentColorIndex]; } }
 
-    private void Start()
+    [SerializeField] GameObject library;
+    Color activeColor = Color.white;
+
+    private void OnEnable()
     {
-    
+        PaintUINode[] uiNodes = library.GetComponentsInChildren<PaintUINode>();
+        for (int i = 0; i < uiNodes.Length; i++)
+        {
+            uiNodes[i].onColorChanged += ChangeActiveColor;
+        }
+    }
+
+    private void OnDisable()
+    {
+        PaintUINode[] uiNodes = library.GetComponentsInChildren<PaintUINode>();
+        for (int i = 0; i < uiNodes.Length; i++)
+        {
+            uiNodes[i].onColorChanged -= ChangeActiveColor;
+        }
+    }
+
+    private void ChangeActiveColor(Color color)
+    {
+        activeColor = color;
     }
 
     private void Update()
@@ -45,10 +66,10 @@ public class WallDetector : MonoBehaviour
                 paintWall(anchorHit);
             }
 
-            if ((Input.GetMouseButtonDown(1) || OVRInput.GetDown(OVRInput.RawButton.B)))
-            {
-                currentColorIndex = (currentColorIndex + 1) % colorsMaterials.Length;
-            }
+            //if ((Input.GetMouseButtonDown(1) || OVRInput.GetDown(OVRInput.RawButton.B)))
+            //{
+            //    currentColorIndex = (currentColorIndex + 1) % colorsMaterials.Length;
+            //}
         }
     }
 
@@ -77,7 +98,7 @@ public class WallDetector : MonoBehaviour
         currCube.transform.localScale = new Vector3(anchor.GetAnchorSize().x, anchor.GetAnchorSize().y, 0.01f);
         currCube.transform.localPosition = anchor.transform.position;
         currCube.transform.localRotation = anchor.transform.rotation;
-        currCube.GetComponent<MeshRenderer>().material = CurrentColorMaterial;
+        //currCube.GetComponent<MeshRenderer>().material = CurrentColorMaterial;
         currCube.AddComponent<BoxCollider>();
         currCube.tag = "WallPaint";
         currCube.SetActive(true);
@@ -87,7 +108,7 @@ public class WallDetector : MonoBehaviour
     void CreateDebugPrimitives(GameObject debugCube)
     {
         // debugCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        debugCube.GetComponent<Renderer>().material.color = UnityEngine.Color.white;
+        debugCube.GetComponent<Renderer>().material.color = activeColor;
         debugCube.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         debugCube.GetComponent<Collider>().enabled = false;
         debugCube.SetActive(false);
