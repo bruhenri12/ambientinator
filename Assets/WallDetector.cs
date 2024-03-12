@@ -87,7 +87,7 @@ public class WallDetector : MonoBehaviour
     void CreateDebugPrimitives(GameObject debugCube)
     {
         // debugCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        debugCube.GetComponent<Renderer>().material.color = UnityEngine.Color.green;
+        debugCube.GetComponent<Renderer>().material.color = UnityEngine.Color.white;
         debugCube.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         debugCube.GetComponent<Collider>().enabled = false;
         debugCube.SetActive(false);
