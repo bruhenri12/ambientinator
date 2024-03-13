@@ -50,6 +50,11 @@ public class WallDetector : MonoBehaviour
 
     private void Update()
     {
+        if (FeatureSelector.Instance.ActiveFeature != Features.paint)
+            return;
+
+        print("Pintura ta on");
+
         Vector3 rayOrigin = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
         Vector3 rayDirection = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward;
         Ray ray = new Ray(rayOrigin, rayDirection);
@@ -65,11 +70,6 @@ public class WallDetector : MonoBehaviour
             {
                 paintWall(anchorHit);
             }
-
-            //if ((Input.GetMouseButtonDown(1) || OVRInput.GetDown(OVRInput.RawButton.B)))
-            //{
-            //    currentColorIndex = (currentColorIndex + 1) % colorsMaterials.Length;
-            //}
         }
     }
 
