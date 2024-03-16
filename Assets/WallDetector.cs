@@ -46,6 +46,7 @@ public class WallDetector : MonoBehaviour
     private void ChangeActiveColor(Color color)
     {
         activeColor = color;
+        print("Active color " + color);
     }
 
     private void Update()
