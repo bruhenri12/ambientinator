@@ -75,7 +75,7 @@ public class WallDetector : MonoBehaviour
 
         GameObject currCube = debugCubes.Last();
         currCube.transform.localScale = new Vector3(anchor.GetAnchorSize().x, anchor.GetAnchorSize().y, 0.01f);
-        currCube.transform.localPosition = anchor.transform.position;
+        currCube.transform.localPosition = anchor.transform.position - new Vector3(0.1f,0,0.1f);
         currCube.transform.localRotation = anchor.transform.rotation;
         currCube.GetComponent<MeshRenderer>().material = CurrentColorMaterial;
         currCube.AddComponent<BoxCollider>();
