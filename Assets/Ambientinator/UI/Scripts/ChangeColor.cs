@@ -8,6 +8,9 @@ public class ChangeColor : MonoBehaviour
 {
     public Light lightingObj;
     public void changeColor(GameObject gameObject){
-        lightingObj.color = gameObject.GetComponent<Image>().color;
+        if (lightingObj)
+        {
+            lightingObj.color = gameObject.GetComponent<Image>().color;
+        }
     }
 }
