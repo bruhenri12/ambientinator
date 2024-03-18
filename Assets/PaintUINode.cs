@@ -31,6 +31,7 @@ public class PaintUINode : MonoBehaviour
     public void ChangeActiveColor(bool active)
     {
         if (active)
-            onColorChanged?.Invoke(nodeColor);
+            ChangeActiveColor(true);
+            //onColorChanged?.Invoke(nodeColor);
     }
 }

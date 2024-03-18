@@ -43,18 +43,24 @@ public class WallDetector : MonoBehaviour
     //    }
     //}
 
-    private void ChangeActiveColor(Color color)
+    //public void ChangeActiveColor(Color color)
+    //{
+    //    activeColor = color;
+    //    print("Active color " + color);
+    //}
+
+    public void ChangeActiveColor(int colorIndex)
     {
-        activeColor = color;
-        print("Active color " + color);
+        currentColorIndex = colorIndex;
+        print("Active color " + CurrentColorMaterial.color);
     }
 
     private void Update()
     {
-        //if (FeatureSelector.Instance.ActiveFeature != Features.paint)
-        //    return;
+        if (FeatureSelector.Instance.ActiveFeature != Features.paint)
+            return;
 
-        print("Pintura ta on");
+        //print("Pintura ta on");
 
         Vector3 rayOrigin = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
         Vector3 rayDirection = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward;
@@ -109,7 +115,7 @@ public class WallDetector : MonoBehaviour
     void CreateDebugPrimitives(GameObject debugCube)
     {
         // debugCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        debugCube.GetComponent<Renderer>().material.color = activeColor;
+        //debugCube.GetComponent<Renderer>().material.color = activeColor;
         debugCube.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         debugCube.GetComponent<Collider>().enabled = false;
         debugCube.SetActive(false);
