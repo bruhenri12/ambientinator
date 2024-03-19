@@ -1106,6 +1106,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 775873852966918137, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
         type: 3}
+      propertyPath: m_text
+      value: Floor Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873852966918137, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 7032093815205813286, guid: fb3e28b87e9ba534d9c7e8da0d859d5b,
@@ -1275,6 +1280,53 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 475046391}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: assignObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SelectObjLighting, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7155770946099001718, guid: 41b5a9c039a19514a966a677a087cb31,
+        type: 3}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873854086117996, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 27ed03a3d7e37b84d895dbe1350bed64,
+        type: 3}
     - target: {fileID: 775873854086117998, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -13586,6 +13638,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 775873852966918137, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
         type: 3}
+      propertyPath: m_text
+      value: Royal Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873852966918137, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 7032093815205813286, guid: fb3e28b87e9ba534d9c7e8da0d859d5b,
@@ -13755,6 +13812,53 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 475046391}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: assignObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SelectObjLighting, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7155770946099001718, guid: 5c9ff5f0e96f99841943a8efd5f19199,
+        type: 3}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873854086117996, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3bc309165203a2840ab8727fcf571444,
+        type: 3}
     - target: {fileID: 775873854086117998, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -15011,6 +15115,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 775873852966918137, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
         type: 3}
+      propertyPath: m_text
+      value: Round Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873852966918137, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 7032093815205813286, guid: fb3e28b87e9ba534d9c7e8da0d859d5b,
@@ -15170,6 +15279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoundedBoxToggle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972290, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
         type: 3}
       propertyPath: m_IsOn
@@ -15180,6 +15294,53 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 475046391}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: assignObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SelectObjLighting, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7155770946099001718, guid: af94b3a8ec8117b4e8a8f1557a355451,
+        type: 3}
+    - target: {fileID: 775873853866972292, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 775873854086117996, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 83954df50fd589746a90490936bd4e79,
+        type: 3}
     - target: {fileID: 775873854086117998, guid: fb12961b98d40ad4c9a2fb064dc0cbd8,
         type: 3}
       propertyPath: m_AnchorMax.y
