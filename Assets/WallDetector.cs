@@ -69,15 +69,28 @@ public class WallDetector : MonoBehaviour
         MRUKAnchor anchorHit = null;
         MRUK.Instance?.GetCurrentRoom()?.Raycast(ray, Mathf.Infinity, out hit, out anchorHit);
 
-        if (anchorHit != null)
+        bool paintWallButtonPressed = (Input.GetMouseButtonDown(0) || OVRInput.GetDown(OVRInput.RawButton.A));
+
+        RaycastHit wallPaintingHit;
+        if (Physics.Raycast(ray, out wallPaintingHit) && wallPaintingHit.collider.CompareTag("WallPaint"))
+        {
+            print("Bateu em " + wallPaintingHit.collider.gameObject.name);
+            if (paintWallButtonPressed)
+            {
+                print("pintando ");
+                wallPaintingHit.collider.gameObject.GetComponent<MeshRenderer>().material = CurrentColorMaterial;
+            }
+        }
+        else if (anchorHit != null)
         {
             debugger.ShowDebugAnchorsDebugger(isWall(anchorHit));
 
-            if ((Input.GetMouseButtonDown(0) || OVRInput.GetDown(OVRInput.RawButton.A)) && isWall(anchorHit))
+            if (paintWallButtonPressed && isWall(anchorHit))
             {
                 paintWall(anchorHit);
             }
         }
+
     }
 
     bool isWall(MRUKAnchor anchor)
@@ -108,6 +121,7 @@ public class WallDetector : MonoBehaviour
         currCube.GetComponent<MeshRenderer>().material = CurrentColorMaterial;
         currCube.AddComponent<BoxCollider>();
         currCube.tag = "WallPaint";
+        //currCube.layer = LayerMask.NameToLayer("WallPainting");
         currCube.SetActive(true);
     }
 
@@ -116,7 +130,7 @@ public class WallDetector : MonoBehaviour
     {
         // debugCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         //debugCube.GetComponent<Renderer>().material.color = activeColor;
-        debugCube.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        debugCube.transform.localScale = new Vector3(1f, 1f, 1f);
         debugCube.GetComponent<Collider>().enabled = false;
         debugCube.SetActive(false);
     }
